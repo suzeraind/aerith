@@ -43,3 +43,14 @@ To run tests for the entire project:
 ```bash
 npm test
 ```
+## Task Generator
+
+This project includes a utility script to quickly scaffold new coding tasks.
+
+### Usage
+
+To create a new task, run:
+
+```bash
+npm run create-task <taskName>
+```

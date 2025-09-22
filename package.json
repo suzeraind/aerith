@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "scripts": {
     "test": "jest",
-    "start": "ts-node src/index.ts"
+    "start": "ts-node src/index.ts",
+    "create-task": "ts-node src/createTask.ts"
   },
   "keywords": [],
   "author": "suzeraind",
