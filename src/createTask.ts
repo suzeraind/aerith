@@ -22,7 +22,7 @@ const functionTemplate = `export function ${taskName}() {
   // TODO: implement ${taskName}
 }
 `;
-fs.writeFileSync(path.join(taskDir, `${taskName}.ts`), functionTemplate);
+fs.writeFileSync(path.join(taskDir, 'solution.ts'), functionTemplate);
 
 const readmeTemplate = `# ${taskName}
 
@@ -30,7 +30,7 @@ Task description...
 `;
 fs.writeFileSync(path.join(taskDir, "README.md"), readmeTemplate);
 
-const testTemplate = `import { ${taskName} } from "./${taskName}";
+const testTemplate = `import { ${taskName} } from "./solution";
 
 test("${taskName} should work", () => {
   // TODO: write tests
@@ -39,4 +39,4 @@ test("${taskName} should work", () => {
 `;
 fs.writeFileSync(path.join(taskDir, "test.ts"), testTemplate);
 
-console.log(`Task "${taskName}" has been created in ./tasks/${taskName}`);
+console.log(`Task "${taskName}" has been created in ./tasks/solution.ts`);
