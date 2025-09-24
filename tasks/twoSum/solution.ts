@@ -12,6 +12,19 @@ export function twoSum(numbers: Array<number>, target: number): Array<number> {
   throw Error('invalid target');
 }
 
+function twoSumTwoPonters(numbers: Array<number>, target: number): Array<number> {
+  //works only on sorted arrays
+  let l = 0;
+  let r = numbers.length - 1;
+
+  while (l < r) {
+    const sum = numbers[l] + numbers[r];
+    if (sum === target) return [l, r];
+    sum < target ? l++ : r--;
+  }
+  throw Error('invalid target');
+}
+
 function twoSumObj(numbers: Array<number>, target: number): Array<number> {
   const map: Record<number, number> = {};
 
