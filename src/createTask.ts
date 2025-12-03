@@ -30,13 +30,14 @@ Task description...
 `;
 fs.writeFileSync(path.join(taskDir, "README.md"), readmeTemplate);
 
-const testTemplate = `import { ${taskName} } from "./solution";
+const testTemplate = `import { expect, test } from "bun:test";
+import { ${taskName} } from "./solution";
 
 test("${taskName} should work", () => {
   // TODO: write tests
   expect(${taskName}()).toBeDefined();
 });
 `;
-fs.writeFileSync(path.join(taskDir, "test.ts"), testTemplate);
+fs.writeFileSync(path.join(taskDir, "solution.test.ts"), testTemplate);
 
 console.log(`Task "${taskName}" has been created in ./tasks/solution.ts`);

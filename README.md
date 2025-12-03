@@ -1,21 +1,22 @@
 # Aerith
 
-Aerith is a structured TypeScript repository designed for algorithm problem solving with integrated Jest testing framework. This project provides an organized environment for practicing and testing algorithmic solutions with a focus on clean code and test-driven development.
+Aerith is a structured TypeScript repository designed for algorithm problem solving, powered by the [Bun](https://bun.sh) runtime. This project provides an organized environment for practicing and testing algorithmic solutions with a focus on clean code and test-driven development.
+
 ## Usage
 
-To run a task, use the following command:
+To run a task's tests, use the following command:
 
 ```bash
-npm start <task-name>
+bun start <task-name>
 ```
 
 For example, to run the `sum` task:
 
 ```bash
-npm start sum
+bun start sum
 ```
 
-This will execute the `test.ts` file associated with the specified task using Jest.
+This will execute the `solution.test.ts` file associated with the specified task using Bun's built-in test runner.
 
 ## Project Structure
 
@@ -27,7 +28,7 @@ This will execute the `test.ts` file associated with the specified task using Je
     └── <task-name>/      # Directory for each task
         ├── README.MD     # Task-specific documentation
         ├── solution.ts   # Task implementation
-        └── test.ts       # Jest tests for the task
+        └── solution.test.ts # Bun tests for the task
 ```
 
 ## Development
@@ -35,14 +36,15 @@ This will execute the `test.ts` file associated with the specified task using Je
 To install dependencies:
 
 ```bash
-npm install
+bun install
 ```
 
 To run tests for the entire project:
 
 ```bash
-npm test
+bun test
 ```
+
 ## Task Generator
 
 This project includes a utility script to quickly scaffold new coding tasks.
@@ -52,5 +54,5 @@ This project includes a utility script to quickly scaffold new coding tasks.
 To create a new task, run:
 
 ```bash
-npm run create-task <taskName>
+bun create-task <taskName>
 ```

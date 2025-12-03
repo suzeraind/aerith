@@ -1,6 +1,5 @@
 import * as path from 'path';
 import * as fs from 'fs';
-import { runCLI } from 'jest';
 
 const main = async () => {
   const taskName = process.argv[2];
@@ -17,11 +16,14 @@ const main = async () => {
     process.exit(1);
   }
 
-  const result = await runCLI({
-    testMatch: [path.join(taskPath, 'test.ts')],
-  } as any, [process.cwd()]);
+  const testFile = path.join(taskPath, 'solution.test.ts');
 
-  console.log(result.results);
+  const proc = Bun.spawn(["bun", "test", testFile], {
+    stdout: "inherit",
+    stderr: "inherit",
+  });
+
+  await proc.exited;
 };
 
 main();
